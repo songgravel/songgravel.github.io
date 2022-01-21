@@ -61,7 +61,7 @@
         sourceHeight: window.innerWidth > window.innerHeight ? 480 : 640,
 	})
 
-    arToolkitSource.init(function onReady() {
+    arToolkitSource.init(() => {
         arToolkitSource.domElement.addEventListener('canplay', () => {
             console.log(
                 'canplay',

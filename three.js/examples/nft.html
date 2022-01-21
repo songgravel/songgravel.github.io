@@ -175,7 +175,7 @@
         //////////////////////////////////////////////////////////////////////////////////
         //		add an object in the scene
         //////////////////////////////////////////////////////////////////////////////////
-
+/*
         var threeGLTFLoader = new THREE.GLTFLoader();
         var model;
 
@@ -224,7 +224,46 @@
             };
 
             requestAnimationFrame(animate);
-        }
-    );
+        });
+ */
+	    // add a torus knot
+	    var geometry	= new THREE.BoxGeometry(1,1,1);
+	    var material	= new THREE.MeshNormalMaterial({
+	      transparent : true,
+	      opacity: 0.5,
+	      side: THREE.DoubleSide
+	    });
+	    var mesh	= new THREE.Mesh( geometry, material );
+	    mesh.position.y	= geometry.parameters.height/2
+	    scene.add( mesh );
+
+	    var geometry	= new THREE.TorusKnotGeometry(0.3,0.1,64,16);
+	    var material	= new THREE.MeshNormalMaterial();
+	    var mesh	= new THREE.Mesh( geometry, material );
+	    mesh.position.y	= 0.5
+	    scene.add( mesh );
+	    
+	    var animate = function() {
+	        requestAnimationFrame(animate);
+
+	        if (mixers.length > 0) {
+	            for (var i = 0; i < mixers.length; i++) {
+	                mixers[i].update(clock.getDelta());
+	            }
+	        }
+
+	        if (!arToolkitSource.ready) {
+	            return;
+	        }
+
+	        arToolkitContext.update( arToolkitSource.domElement )
+
+	        // update scene.visible if the marker is seen
+	        scene.visible = camera.visible;
+
+	        renderer.render(scene, camera);
+	    };
+
+	    requestAnimationFrame(animate);
     </script>
 </body>
