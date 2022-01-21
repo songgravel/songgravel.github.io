@@ -69,11 +69,11 @@
                 arToolkitSource.domElement.videoWidth,
                 arToolkitSource.domElement.videoHeight
             );
-
-            initARContext();
         });
 
         window.arToolkitSource = arToolkitSource;
+        console.log('arToolkitSource inited');
+        initARContext();
     });
 	////////////////////////////////////////////////////////////////////////////////
 	//          initialize arToolkitContext
@@ -169,6 +169,11 @@
 	window.addEventListener('resize', function(){
 		onResize()
     })
+    
+    // listener for end loading of NFT marker
+    window.addEventListener('arjs-nft-loaded', function(ev){
+      console.log(ev);
+    })
 
 	function onResize(){
 		arToolkitSource.onResizeElement()
@@ -234,7 +239,7 @@
 
 	var threeGLTFLoader = new THREE.GLTFLoader();
     var model;
-
+	console.log('Load GLTF model');
     threeGLTFLoader.load("./resources/Flamingo.glb", function (gltf) {
         model = gltf.scene.children[0];
         model.name = 'Flamingo';
