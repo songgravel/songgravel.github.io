@@ -101,11 +101,14 @@
 
         // MARKER
         arMarkerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
-           type: 'barcode',
-           barcodeValue: 0,
-           smooth: true,
-           changeMatrixMode: 'cameraTransformMatrix',
-        }); 
+            type : 'nft',
+            descriptorsUrl : 'data/dataNFT/pinball',
+            changeMatrixMode: 'cameraTransformMatrix',
+            smooth: true,
+            smoothCount: 10,
+            smoothTolerance: 0.01,
+            smoothThreshold: 5
+        })
 
         console.log('ArMarkerControls', arMarkerControls);
         window.arMarkerControls = arMarkerControls;
@@ -194,6 +197,9 @@
 
 	// as we do changeMatrixMode: 'cameraTransformMatrix', start with invisible scene
 	scene.visible = false
+	
+   	var root = new THREE.Object3D();
+    scene.add(root);
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		add an object in the scene
@@ -234,12 +240,12 @@
         //var action = mixer.clipAction(animation);
         //action.play();
 
-        //root.matrixAutoUpdate = false;
-        scene.add(model);
+        root.matrixAutoUpdate = false;
+        root.add(model);
 
-        //model.position.z = -200;
-        //model.position.x = 100;
-        //model.position.y = 100;
+        model.position.z = -200;
+        model.position.x = 100;
+        model.position.y = 100;
         //model.rotation.x = -60;
     })
 
