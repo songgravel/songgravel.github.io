@@ -15,7 +15,7 @@
 	<br/>
 	Contact me any time at <a href='https://twitter.com/nicolocarp' target='_blank'>@nicolocarp</a>
 	<br/>
-	1726
+	1741
 </div><script>
 	//////////////////////////////////////////////////////////////////////////////////
 	//		Init
@@ -61,7 +61,7 @@
         sourceHeight: window.innerWidth > window.innerHeight ? 480 : 640,
 	})
 
-    arToolkitSource.init(() => {
+    arToolkitSource.init(function onReady() {
         arToolkitSource.domElement.addEventListener('canplay', () => {
             console.log(
                 'canplay',
@@ -73,8 +73,8 @@
 
         window.arToolkitSource = arToolkitSource;
         console.log('arToolkitSource inited');
-        initARContext();
     });
+	initARContext();
 	////////////////////////////////////////////////////////////////////////////////
 	//          initialize arToolkitContext
 	////////////////////////////////////////////////////////////////////////////////
