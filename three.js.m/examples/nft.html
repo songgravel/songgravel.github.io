@@ -89,13 +89,8 @@
         var camera = new THREE.Camera();
         scene.add(camera);
 
-        // var light = new THREE.AmbientLight(0xffffff);
-        // scene.add(light);
-        const ambient = new THREE.AmbientLight( 0x666666 );
-        scene.add( ambient );
-        const directionalLight = new THREE.DirectionalLight( 0x887766 );
-        directionalLight.position.set( - 1, 1, 1 ).normalize();
-        scene.add( directionalLight );
+        var light = new THREE.AmbientLight(0xffffff);
+        scene.add(light);
 
         ////////////////////////////////////////////////////////////////////////////////
         //          handle arToolkitSource
