@@ -199,7 +199,6 @@
 	//		add an object in the scene
 	//////////////////////////////////////////////////////////////////////////////////
 
-	/*
 	// add a simple box
 	var geometry	= new THREE.BoxGeometry(1,1,1);
 	var material	= new THREE.MeshNormalMaterial({
@@ -221,7 +220,7 @@
 	onRenderFcts.push(function(delta){
 		mesh.rotation.x += Math.PI*delta
 	})
-	*/
+	
 	var threeGLTFLoader = new THREE.GLTFLoader();
     var model;
 
@@ -238,9 +237,9 @@
         //root.matrixAutoUpdate = false;
         scene.add(model);
 
-        model.position.z = -200;
-        model.position.x = 100;
-        model.position.y = 100;
+        //model.position.z = -200;
+        //model.position.x = 100;
+        //model.position.y = 100;
         //model.rotation.x = -60;
     })
 
