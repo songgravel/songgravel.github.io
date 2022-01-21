@@ -81,10 +81,10 @@
 
         // CONTEXT
         arToolkitContext = new THREEx.ArToolkitContext({
-            cameraParametersUrl: cameraParam,
-            detectionMode: 'mono_and_matrix',
-            matrixCodeType: '3x3',
-            patternRatio: 0.5,
+            //cameraParametersUrl: cameraParam,
+            detectionMode: 'mono',//detectionMode: 'mono_and_matrix',
+            //matrixCodeType: '3x3',
+            //patternRatio: 0.5,
 
             // canvasWidth: arToolkitSource.domElement.videoWidth,
             // canvasHeight: arToolkitSource.domElement.videoHeight
@@ -206,6 +206,7 @@
 	//		add an object in the scene
 	//////////////////////////////////////////////////////////////////////////////////
 
+/*
 	// add a simple box
 	var geometry	= new THREE.BoxGeometry(1,1,1);
 	var material	= new THREE.MeshNormalMaterial({
@@ -227,7 +228,7 @@
 	onRenderFcts.push(function(delta){
 		mesh.rotation.x += Math.PI*delta
 	})
-	
+*/	
 	var threeGLTFLoader = new THREE.GLTFLoader();
     var model;
 
