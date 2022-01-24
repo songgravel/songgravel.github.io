@@ -72,7 +72,6 @@
 
         renderer.setPixelRatio(window.devicePixelRatio);
 
-		renderer.autoClear = true;
         renderer.setClearColor(new THREE.Color('lightgrey'), 0)
         renderer.setSize( window.innerWidth, window.innerHeight );
         renderer.domElement.style.position = 'absolute'
@@ -143,7 +142,7 @@
             detectionMode: 'mono',
             canvasWidth: 480,
             canvasHeight: 640,
-            imageSmoothingEnabled : true,
+            //imageSmoothingEnabled : true,
         })
 
         // initialize it
@@ -161,10 +160,10 @@
             type : 'nft',
             descriptorsUrl : 'data/dataNFT/pinball',
             changeMatrixMode: 'cameraTransformMatrix',
-            smooth: true,
-            smoothCount: 10,
-            smoothTolerance: 0.01,
-            smoothThreshold: 5
+            //smooth: true,
+            //smoothCount: 10,
+            //smoothTolerance: 0.01,
+            //smoothThreshold: 5
         })
 
         scene.visible = false
