@@ -63,7 +63,8 @@
             antialias: true,
             alpha: true,
             precision: 'mediump',
-            //logarithmicDepthBuffer: true,
+            depth: true,
+            logarithmicDepthBuffer: true,
         });
 
         var clock = new THREE.Clock();
@@ -87,7 +88,8 @@
         //////////////////////////////////////////////////////////////////////////////////
 
         // Create a camera
-        var camera = new THREE.Camera();
+        var camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+        // var camera = new THREE.Camera();
         scene.add(camera);
 
         // var light = new THREE.AmbientLight(0xffffff);
@@ -142,13 +144,17 @@
             detectionMode: 'mono',
             canvasWidth: 480,
             canvasHeight: 640,
-            //imageSmoothingEnabled : true,
+            // imageSmoothingEnabled : true,
         })
 
         // initialize it
         arToolkitContext.init(function onCompleted(){
             // copy projection matrix to camera
             camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
+            console.log('======camera');
+            for (var key in camera) {
+                console.log('key:' + key + ' value:' + camera[key]);
+            }
         })
 
         ////////////////////////////////////////////////////////////////////////////////

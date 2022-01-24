@@ -63,6 +63,7 @@
             antialias: true,
             alpha: true,
             precision: 'mediump',
+            depth: true,
             logarithmicDepthBuffer: true,
         });
 
@@ -149,6 +150,10 @@
         arToolkitContext.init(function onCompleted(){
             // copy projection matrix to camera
             camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
+            console.log('======camera 1');
+            for (var key in camera) {
+                console.log('key:' + key + ' value:' + camera[key]);
+            }
         })
 
         ////////////////////////////////////////////////////////////////////////////////
