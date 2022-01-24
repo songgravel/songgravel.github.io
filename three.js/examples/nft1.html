@@ -60,7 +60,7 @@
         //////////////////////////////////////////////////////////////////////////////////
 
         var renderer = new THREE.WebGLRenderer({
-            //antialias: true,
+            antialias: true,
             alpha: true,
             precision: 'mediump',
             logarithmicDepthBuffer: true,
@@ -72,6 +72,7 @@
 
         renderer.setPixelRatio(window.devicePixelRatio);
 
+		renderer.autoClear = true;
         renderer.setClearColor(new THREE.Color('lightgrey'), 0)
         renderer.setSize( window.innerWidth, window.innerHeight );
         renderer.domElement.style.position = 'absolute'
