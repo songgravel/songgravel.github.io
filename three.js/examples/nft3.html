@@ -63,8 +63,8 @@
             antialias: true,
             alpha: true,
             precision: 'mediump',
-            depth: true,
-            // logarithmicDepthBuffer: true,
+            // depth: true,
+            logarithmicDepthBuffer: true,
         });
 
         var clock = new THREE.Clock();
@@ -106,8 +106,8 @@
 
         var arToolkitSource = new THREEx.ArToolkitSource({
             sourceType : 'webcam',
-            // sourceWidth: 480,
-            // sourceHeight: 640,
+            sourceWidth: 480,
+            sourceHeight: 640,
         })
 
         arToolkitSource.init(function onReady(){
@@ -142,7 +142,7 @@
         // create atToolkitContext
         var arToolkitContext = new THREEx.ArToolkitContext({
             detectionMode: 'mono',
-            // imageSmoothingEnabled : true,
+            imageSmoothingEnabled : true,
             // canvasWidth: 480,
             // canvasHeight: 640,
         })

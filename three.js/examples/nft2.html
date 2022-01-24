@@ -64,7 +64,7 @@
             alpha: true,
             precision: 'mediump',
             // depth: true,
-            // logarithmicDepthBuffer: true,
+            logarithmicDepthBuffer: true,
         });
 
         var clock = new THREE.Clock();
@@ -142,9 +142,12 @@
         // create atToolkitContext
         var arToolkitContext = new THREEx.ArToolkitContext({
             detectionMode: 'mono',
-            // imageSmoothingEnabled : true,
-            canvasWidth: 480,
-            canvasHeight: 640,
+            imageSmoothingEnabled : true,
+            // canvasWidth: 480,
+            // canvasHeight: 640,
+        }, {
+            sourceWidth: 480,
+            sourceHeight: 640,
         })
 
         // initialize it
