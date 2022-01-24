@@ -63,6 +63,7 @@
             antialias: true,
             alpha: true,
             precision: 'mediump',
+            logarithmicDepthBuffer: true,
         });
 
         var clock = new THREE.Clock();
@@ -175,7 +176,7 @@
         //////////////////////////////////////////////////////////////////////////////////
         //		add an object in the scene
         //////////////////////////////////////////////////////////////////////////////////
-/*
+
         var threeGLTFLoader = new THREE.GLTFLoader();
         var model;
 
@@ -225,7 +226,7 @@
 
             requestAnimationFrame(animate);
         });
- */
+ 		/*
 	    // add a torus knot
 	    var geometry	= new THREE.BoxGeometry(1,1,1);
 	    var material	= new THREE.MeshNormalMaterial({
@@ -265,5 +266,6 @@
 	    };
 
 	    requestAnimationFrame(animate);
+	    */
     </script>
 </body>
