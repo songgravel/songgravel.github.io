@@ -145,9 +145,6 @@
             imageSmoothingEnabled : true,
             canvasWidth: 480,
             canvasHeight: 640,
-        }, {
-            sourceWidth: 480,
-            sourceHeight: 640,
         })
 
         // initialize it
@@ -165,7 +162,8 @@
             type : 'nft',
             descriptorsUrl : 'data/dataNFT/coco',
             //descriptorsUrl : 'data/dataNFT/pinball',
-            changeMatrixMode: 'cameraTransformMatrix',
+            //changeMatrixMode: 'cameraTransformMatrix',
+            changeMatrixMode: 'modelViewMatrix',
             smooth: true,
             smoothCount: 10,
             smoothTolerance: 0.01,
