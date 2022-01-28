@@ -146,15 +146,12 @@
             imageSmoothingEnabled : true,
             canvasWidth: 480,
             canvasHeight: 640,
-        }, {
-            sourceWidth: 480,
-            sourceHeight: 640,
         })
 
         // initialize it
         arToolkitContext.init(function onCompleted(){
             // copy projection matrix to camera
-            //camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
+            camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
         })
 
         ////////////////////////////////////////////////////////////////////////////////
@@ -165,8 +162,8 @@
         var markerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
             type : 'nft',
             descriptorsUrl : 'data/dataNFT/pinball',
-            //changeMatrixMode: 'cameraTransformMatrix',
-            changeMatrixMode: 'modelViewMatrix',
+            changeMatrixMode: 'cameraTransformMatrix',
+            //changeMatrixMode: 'modelViewMatrix',
             smooth: true,
             smoothCount: 10,
             smoothTolerance: 0.01,
@@ -229,6 +226,7 @@
                 arToolkitContext.update( arToolkitSource.domElement )
 
                 // update scene.visible if the marker is seen
+        		camera.position.set(0, 0, 200);
                 scene.visible = camera.visible;
 
                 renderer.render(scene, camera);
