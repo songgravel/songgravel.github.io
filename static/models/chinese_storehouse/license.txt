@@ -1,0 +1,11 @@
+Model Information:
+* title:	Chinese storehouse
+* source:	https://sketchfab.com/3d-models/chinese-storehouse-caa4a09b78c344f5a568ce667eccef4c
+* author:	LsWaterPipe (https://sketchfab.com/LsWaterPipe)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Chinese storehouse" (https://sketchfab.com/3d-models/chinese-storehouse-caa4a09b78c344f5a568ce667eccef4c) by LsWaterPipe (https://sketchfab.com/LsWaterPipe) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
