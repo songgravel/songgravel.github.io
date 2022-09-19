@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Cocos Creator | spdb_app_travel</title>
+  <title>Puzzle</title>
 
   <!--http://www.html5rocks.com/en/mobile/mobifying/-->
   <meta name="viewport"
@@ -48,12 +48,52 @@
     </div>
   </div>
 
-<script src="src/settings.7c1c1.js" charset="utf-8"></script>
+<script src="src/settings.5441d.js" charset="utf-8"></script>
 
-<script src="main.1d038.js" charset="utf-8"></script>
+<script src="main.4e8fc.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+// Get url params
+function GetMainUrl(){
+	var url=document.URL
+	if(url.indexOf("?")!=-1){
+		url=url.split("?")[0];
+	}
+	return url;
+}
+function GetRequest() {  
+   var url = location.search; //获取url中包含"?"符以及其后的字串 
+   var theRequest = new Object();
+   if (url.indexOf("?") != -1) {
+      	var str = url.substr(1);
+      	var arr = str.split("&");
+	    var obj = new Object();
+	    for (var i = 0; i < arr.length; i++) {
+	      	var tmp_arr = arr[i].split("=");
+	      	obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
+	    }
+	    return obj;
+   }  
+   else
+   {
+	  	return null;
+   }
+} 
+</script>
 
 <script type="text/javascript">
 (function () {
+	// Get params from miniProgram
+	localStorage.setItem("mainURL",GetMainUrl());
+	
+	var obj = GetRequest();
+	if (obj != null) {
+		localStorage.setItem("paramJson", obj);
+	} else {
+		console.log("无透传参数");
+ 		localStorage.setItem("paramJson", null);
+	}
+
     // open web debugger console
     if (typeof VConsole !== 'undefined') {
         window.vConsole = new VConsole();
@@ -76,7 +116,7 @@
       document.body.appendChild(domScript);
     }
 
-    loadScript(debug ? 'cocos2d-js.js' : 'cocos2d-js-min.477e5.js', function () {
+    loadScript(debug ? 'cocos2d-js.js' : 'cocos2d-js-min.7ff4a.js', function () {
       if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {
         loadScript(debug ? 'physics.js' : 'physics-min.941a2.js', window.boot);
       }
