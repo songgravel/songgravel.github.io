@@ -88,7 +88,9 @@ function GetRequest() {
 	
 	var obj = GetRequest();
 	if (obj != null) {
-		localStorage.setItem("paramJson", JSON.stringify(obj));
+		var param = JSON.stringify(obj);
+		console.log("param:" + param);
+		localStorage.setItem("paramJson", param);
 	} else {
 		console.log("no param");
  		localStorage.removeItem("paramJson");
