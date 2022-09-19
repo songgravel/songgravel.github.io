@@ -88,10 +88,10 @@ function GetRequest() {
 	
 	var obj = GetRequest();
 	if (obj != null) {
-		localStorage.setItem("paramJson", obj);
+		localStorage.setItem("paramJson", JSON.stringify(obj));
 	} else {
-		console.log("无透传参数");
- 		localStorage.setItem("paramJson", '');
+		console.log("no param");
+ 		localStorage.removeItem("paramJson");
 	}
 
     // open web debugger console
