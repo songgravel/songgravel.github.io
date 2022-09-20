@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Puzzle</title>
+  <title>Cocos Creator | Puzzle</title>
 
   <!--http://www.html5rocks.com/en/mobile/mobifying/-->
   <meta name="viewport"
@@ -48,9 +48,12 @@
     </div>
   </div>
 
-<script src="src/settings.e4d16.js" charset="utf-8"></script>
+<script src="src/settings.37cea.js" charset="utf-8"></script>
 
-<script src="main.0355d.js" charset="utf-8"></script>
+<script src="main.cb3af.js" charset="utf-8"></script>
+
+<!--<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>-->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
 
 <script type="text/javascript">
 // Get url params
@@ -87,13 +90,28 @@ function GetRequest() {
 	localStorage.setItem("mainURL",GetMainUrl());
 	
 	var obj = GetRequest();
-	if (obj != null) {
-		var param = JSON.stringify(obj);
-		console.log("param:" + param);
-		localStorage.setItem("paramJson", param);
+	if (obj != null && obj.returnUrl != null) {
+		var paramStr = JSON.stringify(obj);
+		console.log("param:" + paramStr);
+		localStorage.setItem("puzzleGameParam", paramStr);
+		/*
+		// Using JSSDK
+		if(typeof(wx)!="undefined" && obj.appId != null){ 
+            wx.config({
+			  debug: true, // 开启调试模式,调用的所有 api 的返回值会在客户端 alert 出来，若要查看传入的参数，可以在 pc 端打开，参数信息会通过 log 打出，仅在 pc 端时才会打印。
+			  appId: obj.appId, // 必填，公众号的唯一标识
+			  timestamp: obj.timestamp, // 必填，生成签名的时间戳
+			  nonceStr: obj.nonceStr, // 必填，生成签名的随机串
+			  signature: obj.signature,// 必填，签名
+			  jsApiList: [
+			  	"checkJSApi",
+			  ] // 必填，需要使用的 JS 接口列表
+			});
+        }
+        */
 	} else {
 		console.log("no param");
- 		localStorage.removeItem("paramJson");
+ 		localStorage.removeItem("puzzleGameParam");
 	}
 
     // open web debugger console
@@ -118,9 +136,9 @@ function GetRequest() {
       document.body.appendChild(domScript);
     }
 
-    loadScript(debug ? 'cocos2d-js.js' : 'cocos2d-js-min.7ff4a.js', function () {
+    loadScript(debug ? 'cocos2d-js.js' : 'cocos2d-js-min.40150.js', function () {
       if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {
-        loadScript(debug ? 'physics.js' : 'physics-min.941a2.js', window.boot);
+        loadScript(debug ? 'physics.js' : 'physics-min.js', window.boot);
       }
       else {
         window.boot();
